@@ -16,11 +16,12 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y cmake lcov g++
 
       - name: Build project
-        run: |
-          mkdir build
-          cd build
-          cmake ..
-          cmake --build .
+      run: |
+    mkdir build
+    cd build
+    cmake $GITHUB_WORKSPACE
+    cmake --build .
+
 
       - name: Run tests
         run: |
